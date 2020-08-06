@@ -42,6 +42,20 @@ public class OperacionesBasicasController {
         resultado = operacionesService.sumar(datosSimples);
         
         return resultado;
+    }
+    
+    @PostMapping("restar")
+    public ResultadoDto postRestar(@RequestBody Map<String, String> datosConsulta) throws Exception {
 
+        DatosSimplesDto datosSimples;
+        ResultadoDto resultado;
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.USE_ANNOTATIONS, true);
+
+        datosSimples = mapper.convertValue((Map<String, String>) datosConsulta, DatosSimplesDto.class);
+        
+        resultado = operacionesService.restar(datosSimples);
+        
+        return resultado;
     }
 }
