@@ -48,7 +48,12 @@ public class OperacionesBasicasServiceImpl implements OperacionesBasicasService 
     public ResultadoDto dividir(DatosSimplesDto datosSimples) {
         ResultadoDto resultado;
 
-        resultado = new ResultadoDto(datosSimples.getOperando1() / datosSimples.getOperando2());
+        if(datosSimples.getOperando2() != 0){
+            resultado = new ResultadoDto(datosSimples.getOperando1() / datosSimples.getOperando2());
+        } else{
+            resultado = new ResultadoDto(0);
+        }
+        
 
         return resultado;
     }
