@@ -46,7 +46,11 @@ public class OperacionesBasicasServiceImpl implements OperacionesBasicasService 
 
     @Override
     public ResultadoDto dividir(DatosSimplesDto datosSimples) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ResultadoDto resultado;
+
+        resultado = new ResultadoDto(datosSimples.getOperando1() / datosSimples.getOperando2());
+
+        return resultado;
     }
 
 }
