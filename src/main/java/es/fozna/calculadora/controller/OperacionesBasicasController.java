@@ -73,4 +73,19 @@ public class OperacionesBasicasController {
         
         return resultado;
     }
+    
+    @PostMapping("dividir")
+    public ResultadoDto postDividir(@RequestBody Map<String, String> datosConsulta) throws Exception {
+
+        DatosSimplesDto datosSimples;
+        ResultadoDto resultado;
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.USE_ANNOTATIONS, true);
+
+        datosSimples = mapper.convertValue((Map<String, String>) datosConsulta, DatosSimplesDto.class);
+        
+        resultado = operacionesService.dividir(datosSimples);
+        
+        return resultado;
+    }
 }
