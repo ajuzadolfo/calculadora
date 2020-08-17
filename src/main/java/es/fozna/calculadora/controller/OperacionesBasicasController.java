@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import es.fozna.calculadora.dto.DatosSimplesDto;
 import es.fozna.calculadora.dto.ResultadoDto;
 import es.fozna.calculadora.service.OperacionesBasicasService;
+import es.fozna.calculadora.service.OperacionesEstadisticasService;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,9 @@ public class OperacionesBasicasController {
 
     @Autowired
     OperacionesBasicasService operacionesService;
+    
+    @Autowired
+    OperacionesEstadisticasService operacionesEstadisticasService;
     
     @PostMapping("sumar")
     public ResultadoDto postSumar(@RequestBody Map<String, String> datosConsulta) throws Exception {
@@ -85,6 +89,21 @@ public class OperacionesBasicasController {
         datosSimples = mapper.convertValue((Map<String, String>) datosConsulta, DatosSimplesDto.class);
         
         resultado = operacionesService.dividir(datosSimples);
+        
+        return resultado;
+    }
+    
+    @PostMapping("promedio")
+    public ResultadoDto postPromedio(@RequestBody Map<String, String> datosConsulta) throws Exception {
+
+        DatosSimplesDto datosSimples;
+        ResultadoDto resultado;
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.USE_ANNOTATIONS, true);
+
+        datosSimples = mapper.convertValue((Map<String, String>) datosConsulta, DatosSimplesDto.class);
+        
+        resultado = operacionesEstadisticasService.promedio(datosSimples);
         
         return resultado;
     }
