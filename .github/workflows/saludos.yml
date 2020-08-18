@@ -13,4 +13,4 @@ jobs:
         SEGUNDO_NOMBRE: Básica
         APELLIDO: Fozna
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        echo $MY_VAR $PRIMER_NOMBRE $SEGUNDO_NOMBRE $APELLIDO.
