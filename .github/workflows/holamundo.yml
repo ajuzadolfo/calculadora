@@ -21,7 +21,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+    # Ahora el saludo debería se en español
     - uses: ajuzadolfo/hello-world-javascript-action@main
       with:
           who-to-greet: 'Madam Catdolph, the Pangender Sloth'
