@@ -24,4 +24,4 @@ jobs:
     # Ahora el saludo debería se en español
     - uses: ajuzadolfo/hello-world-javascript-action@main
       with:
-          a-quien-saludar: 'Madam Catdolph, the Pangender Sloth'
+          a-quien-saludar: 'Papa Pig'
