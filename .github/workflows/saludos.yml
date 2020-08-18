@@ -1,0 +1,16 @@
+name: Saludos calculadora
+on: push
+
+jobs:
+  my-job:
+    name: Mi trabajo
+    runs-on: ubuntu-latest
+    steps:
+    - name: mostrar un saludo
+      env:
+        MY_VAR: ¡Hola!, mi nombre es:
+        PRIMER_NOMBRE: Calculadora
+        SEGUNDO_NOMBRE: Básica
+        APELLIDO: Fozna
+      run: |
+        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
