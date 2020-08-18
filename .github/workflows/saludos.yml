@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: mostrar un saludo
       env:
-        MY_VAR: ¡Hola!, mi nombre es:
+        MY_VAR: ¡Hola!, mi nombre es
         PRIMER_NOMBRE: Calculadora
         SEGUNDO_NOMBRE: Básica
         APELLIDO: Fozna
