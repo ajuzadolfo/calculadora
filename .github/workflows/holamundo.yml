@@ -22,6 +22,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - uses: actions/hello-world-javascript-action@main
+    - uses: ajuzadolfo/hello-world-javascript-action@main
       with:
           who-to-greet: 'Madam Catdolph, the Pangender Sloth'
