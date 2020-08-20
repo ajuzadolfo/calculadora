@@ -19,5 +19,6 @@ public interface OperacionesBasicasService {
     
     public ResultadoDto multiplicar(DatosSimplesDto datosSimples);
     
+    //Esta división retorna 0 si no se puede realizar correctamente
     public ResultadoDto dividir(DatosSimplesDto datosSimples);
 }
